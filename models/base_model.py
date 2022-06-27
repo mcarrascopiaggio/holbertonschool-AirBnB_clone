@@ -51,4 +51,5 @@ class BaseModel:
             else:
                 new_dict[attribute] = getattr(self, attribute)
         new_dict['__class__'] = self.__class__.__name__
+        # Se agrega la key: "__class__"
         return (new_dict)
