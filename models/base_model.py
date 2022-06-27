@@ -20,7 +20,7 @@ class BaseModel:
         your object
         """
         self.id = str(uuid4())  # convert the id to string
-        self.created_at = datetime.now()
+        self.created_at = datetime.now()  # Use method now() of datetime module
         self.updated_at = datetime.now()
 
     def __str__(self):
@@ -40,16 +40,16 @@ class BaseModel:
         """
         Returns a dictionary containing all keys/values of __dict__ of the
         instance.
-        A special attribute of every module is __dict__.
-        This is the dictionary containing the module’s symbol table.
+        __dict__ is a pecial attribute of every module, is the dictionary
+        containing the module’s symbol table.
         """
         new_dict = {}
 
         for attribute in self.__dict__:
-            if attribute == self.created_at or attribute == self.updated_at:
+            if attribute == "created_at" or attribute == "updated_at":
                 new_dict[attribute] = getattr(self, attribute).isoformat()
             else:
                 new_dict[attribute] = getattr(self, attribute)
         new_dict['__class__'] = self.__class__.__name__
-        # Se agrega la key: "__class__"
+        # Se agrega la key: "__class__" y se le asigna el nombre de la clase.
         return (new_dict)
