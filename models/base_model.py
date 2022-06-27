@@ -42,6 +42,9 @@ class BaseModel:
         instance.
         __dict__ is a pecial attribute of every module, is the dictionary
         containing the module’s symbol table.
+        - Usamos la funcion "getattr", a la misma se le pasa la instancia
+        correspondiente (con self) y el attribute del cual se quiere
+        obtener el valor.
         """
         new_dict = {}
 
