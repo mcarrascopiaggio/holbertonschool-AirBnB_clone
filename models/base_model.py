@@ -40,6 +40,8 @@ class BaseModel:
         """
         Returns a dictionary containing all keys/values of __dict__ of the
         instance.
+        A special attribute of every module is __dict__.
+        This is the dictionary containing the module’s symbol table.
         """
         new_dict = {}
 
