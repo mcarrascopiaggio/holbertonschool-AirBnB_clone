@@ -10,7 +10,8 @@ class BaseModel:
     """class base"""
     def __init__(self):
         """
-        Initialize an instance of BaseModel
+        Initialize an instance of BaseModel with the following
+        Public instance attributes:
         id: string - assign with an uuid when an instance is created:
         you can use uuid.uuid4() to generate unique id.
         created_at: datetime - assign with the current datetime when an
