@@ -5,6 +5,7 @@ Test suite for Base class --> Unittest
 or --> run with python3 -m unittest tests/test_models/test_base_model.py
 - All your test files and folders should start with test_
 """
+import models
 import unittest
 import json
 from datetime import datetime
@@ -40,6 +41,16 @@ class test_Base(unittest.TestCase):
         """
         test = BaseModel()
         self.assertEqual(type(test), BaseModel)
+        self.assertTrue(hasattr(test, "id"))
+        self.assertTrue(hasattr(test, "created_at"))
+        self.assertTrue(hasattr(test, "updated_at"))
+
+    def test_instance_with_kwarg(self):
+        """
+        Test instantation with kwarg
+        """
+        test = BaseModel(name="Marce y Agus")
+        self.assertTrue(hasattr(test, "name"))
 
     def test_created_at(self):
         """
@@ -65,4 +76,26 @@ class test_Base(unittest.TestCase):
         self.assertTrue(hasattr(test, "updated_at"))
         self.assertEqual(type(test.updated_at), datetime)
 
-    # Agregar test para los metodos: save y to_dict
+    def test_save(self):
+        """
+        Test save model: storage created time and updated time
+        """
+        test = BaseModel()
+        test.save()
+        self.assertNotEqual(test.created_at, test.updated_at)
+
+    def test_to_dict(self):
+        """
+        test to dict method
+        """
+        test = BaseModel()
+        test_dict = test.to_dict()
+        self.assertIsInstance(test_dict, dict)
+
+    def test_str(self):
+        """
+        test print format
+        """
+
+    if __name__ == '__main__':
+        unittest.main()
