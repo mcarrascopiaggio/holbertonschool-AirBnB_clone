@@ -54,5 +54,7 @@ class FileStorage():
                 aux_dict2 = json.load(f)
             for key, value in aux_dict2.items():
                 self.__objects[key] = eval(value["__class__"])(**value)
+        #  estas ejecutando lo que devuelve el eval que es el nombre de
+        #  la clase y a eso le pasas como parametro (**value)
         else:
             pass
