@@ -8,7 +8,7 @@ from datetime import datetime
 
 class BaseModel:
     """class base"""
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         Initialize an instance of BaseModel with the following
         Public instance attributes:
@@ -20,15 +20,25 @@ class BaseModel:
         instance is created and it will be updated every time you change
         your object
         """
-        self.id = str(uuid4())  # convert the id to string
-        self.created_at = datetime.now()  # Use method now() of datetime module
-        self.updated_at = datetime.now()
+        if kwargs and kwargs is not None:
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    setattr(self, key,
+                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                elif key == "__class__":
+                    pass  # No le seteamos nada,solo usamos pass
+                else:
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid4())  # convert the id to string
+            self.created_at = datetime.now()  # Use method now of datetime mod
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """
         Should print: [<class name>] (<self.id>) <self.__dict__>
         """
-        return f"[<{self.__class__.__name__}>] (<{self.id}>) <{self.__dict__}>"
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
         """
