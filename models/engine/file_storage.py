@@ -37,8 +37,9 @@ class FileStorage():
         """
         aux_dict = {}
         # cargar el aux_dict con la info que este en objects
+        # se serializa cada objeto que esta en __objects
         for key, value in self.__objects.items():
-            aux_dict[key] = value.to_dict()  # se pasa el value como string
+            aux_dict[key] = value.to_dict()
         with open(self.__file_path, mode="w", encoding="UTF-8") as json_file:
             json.dump(aux_dict, json_file)
 
