@@ -4,6 +4,7 @@ Module for creating a base class: BaseModel
 """
 from uuid import uuid4
 from datetime import datetime
+import models  # if we put: from models import storage -> error:circular import
 
 
 class BaseModel:
@@ -33,6 +34,7 @@ class BaseModel:
             self.id = str(uuid4())  # convert the id to string
             self.created_at = datetime.now()  # Use method now of datetime mod
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """
@@ -46,6 +48,7 @@ class BaseModel:
         datetime.
         """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """
