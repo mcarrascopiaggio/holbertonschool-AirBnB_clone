@@ -3,7 +3,7 @@
 Entry point of the command interpreter.
 """
 import cmd
-from models import storage
+from models import storage  # import storage instance inside the __init__ file
 from models.base_model import BaseModel
 
 
@@ -95,6 +95,27 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()  # save changes into the storage in: file.json
             else:
                 print("** no instance found **")
+
+    def do_all(self, arg):
+        """
+        Prints all string representation of all instances based or not
+        on the class name.
+        """
+        split_arg = arg.split()
+        aux_dict = storage.all()
+        aux_list = []
+
+        if len(split_arg) == 0:
+            for key, value in aux_dict.items():
+                aux_list.append(value)
+            print(aux_list)
+        elif split_arg[0] not in HBNBCommand.classes_list:
+            print("** class doesn't exist **")
+        else:
+            for key, value in aux_dict.items():
+                if arg[0] in key:
+                    aux_list.append(value)
+            print(aux_list)
 
 
 if __name__ == '__main__':
