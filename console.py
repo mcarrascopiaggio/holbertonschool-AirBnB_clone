@@ -109,14 +109,14 @@ class HBNBCommand(cmd.Cmd):
 
         if len(split_arg) == 0:  # esto es para el caso de solo manda "all"
             for key, value in aux_dict.items():
-                aux_list.append(value)  # load data into aux_list
+                aux_list.append(str(value))  # load data into aux_list
             print(aux_list)  # print info with the list format
         elif split_arg[0] not in HBNBCommand.classes_list:
             print("** class doesn't exist **")
         else:  # esto es para el caso que se pasa: all <class name>
             for key, value in aux_dict.items():
                 if arg[0] in key:
-                    aux_list.append(value)
+                    aux_list.append(str(value))
             print(aux_list)
 
 
