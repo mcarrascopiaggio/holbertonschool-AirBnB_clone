@@ -13,7 +13,7 @@ from models.base_model import BaseModel
 
 
 class test_Base(unittest.TestCase):
-    """python3 -m unittest discover tests
+    """
     Test suite for Base class.
     """
     def test_documentation(self):
