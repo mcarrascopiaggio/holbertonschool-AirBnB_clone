@@ -120,6 +120,41 @@ class HBNBCommand(cmd.Cmd):
                     aux_list.append(str(value))  # print string representation
             print(aux_list)
 
+    def do_update(self, arg):
+        """
+        Updates an instance based on the class name and id by adding or
+        updating attribute (save the change into the JSON file).
+        Setattr(): https://www.w3schools.com/python/ref_func_setattr.asp
+        get(): https://www.w3schools.com/python/ref_dictionary_get.asp
+        """
+        split_arg = arg.split()  # use of split() method to parse "arg"
+
+        if not split_arg:
+            print("** class name missing **")
+        elif split_arg[0] not in HBNBCommand.classes_list:
+            print("** class doesn't exist **")
+        elif len(split_arg) == 1:  # if len is 1, is because the id is missing
+            print("** instance id missing **")
+        # Se un else para chequear si existe el id, es el split_arg[1] lo
+        # hacemos por separado para no tener problemas con instance missing
+        else:
+            key = f"{split_arg[0]}.{split_arg[1]}"  # generate key: class.id
+            # save in variable "aux_dict" result of __objects
+            aux_dict = storage.all()
+            if key not in aux_dict:  # requirements checks
+                print("** no instance found **")
+            elif len(split_arg) == 2:
+                print("** attribute name missing **")
+            elif len(split_arg) == 3:
+                print("** value missing **")
+            else:
+                # Se usa el metodo get() para obtener el value de la "key"
+                # correspondiente y se lo guarda en la variable "obj" ya que
+                # si la key esta dentro de "aux_dict" se viene a este else.
+                obj = aux_dict.get(key)
+                setattr(obj, split_arg[2], split_arg[3])
+                storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
