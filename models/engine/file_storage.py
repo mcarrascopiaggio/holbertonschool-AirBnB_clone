@@ -26,7 +26,7 @@ class FileStorage():
     def new(self, obj):
         """
         Sets in priv attribute __objects the obj with key <obj class name>.id
-        Add a new object in the current dict.
+        Add a new object in the current dict with format: <obj class name>.id
         """
         key = f"{obj.__class__.__name__}.{obj.id}"
         self.__objects[key] = obj
