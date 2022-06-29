@@ -56,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         Prints the string representation of an instance based on the class
         name and id.
         """
-        split_arg = arg.split()
+        split_arg = arg.split()  # use of split() method to parse "arg"
 
         if not split_arg:
             print("** class name missing **")
@@ -78,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
         Deletes an instance based on the class name and id
         (save the change into the JSON file).
         """
-        split_arg = arg.split()
+        split_arg = arg.split()  # use of split() method to parse "arg"
 
         if not split_arg:
             print("** class name missing **")
@@ -101,17 +101,19 @@ class HBNBCommand(cmd.Cmd):
         Prints all string representation of all instances based or not
         on the class name.
         """
-        split_arg = arg.split()
+        split_arg = arg.split()  # use of split() method to parse "arg"
+        # save return of all() method in aux_dict to be able iterate it
         aux_dict = storage.all()
+        # create an empty list,this is the format of the example in main task 7
         aux_list = []
 
-        if len(split_arg) == 0:
+        if len(split_arg) == 0:  # esto es para el caso de solo manda "all"
             for key, value in aux_dict.items():
-                aux_list.append(value)
-            print(aux_list)
+                aux_list.append(value)  # load data into aux_list
+            print(aux_list)  # print info with the list format
         elif split_arg[0] not in HBNBCommand.classes_list:
             print("** class doesn't exist **")
-        else:
+        else:  # esto es para el caso que se pasa: all <class name>
             for key, value in aux_dict.items():
                 if arg[0] in key:
                     aux_list.append(value)
