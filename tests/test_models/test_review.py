@@ -6,6 +6,7 @@ test Class Review
 
 import unittest
 import models
+from models.base_model import BaseModel
 from models.review import Review
 
 
