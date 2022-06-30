@@ -195,11 +195,25 @@ class HBNBCommand(cmd.Cmd):
             split_arg = arg.split(".")  # separar por punto el argumento "arg"
             class_arg = split_arg[0]  # This will be the class argument
             command = split_arg[1]  # This will be the command, ex: all()
+            command_split = split_arg[1].split("(")  # Remove left parentheses
+            command_sin_parentheses = command_split[0]  # command without -> (
 
             if command == "all()":
+                # To use do_all, we have to pass the class as argument
                 HBNBCommand.do_all(self, class_arg)  # Use of do_all
             elif command == "count()":
-                HBNBCommand.do_count(self, class_arg)
+                # To use do_count, we have to pass the class as argument
+                HBNBCommand.do_count(self, class_arg)  # Use of do_count
+            elif command_sin_parentheses == "show":
+                # Remove left quote and parentheses from split_arg[1] - show(..
+                id_arg_leftPart = command.split("(\"")
+                # Remove rigth quote and parentheses from the id
+                id_arg_rightPart = id_arg_leftPart.split("\")")
+                id_arg = id_arg_rightPart[0]  # now we have the id
+                # Concatenate class + space + id -> this is how do_show works
+                arg_for_do_show = class_arg + " " + id_arg
+
+                HBNBCommand.do_show(self, arg_for_do_show)  # Use of do_show
             else:
                 print(f"*** Unknown syntax: {arg}")  # This is the default msg
         except Exception:
