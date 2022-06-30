@@ -6,6 +6,7 @@ test Class State
 
 import unittest
 import models
+from models.base_model import BaseModel
 from models.state import State
 
 
