@@ -216,6 +216,18 @@ class HBNBCommand(cmd.Cmd):
 
                 # To use do_show, we have to pass the class + id
                 HBNBCommand.do_show(self, arg_for_do_show)  # Use of do_show
+            elif command_sin_parentheses == "destroy":
+                # Remove left quote and parentheses from split_arg[1]
+                id_arg_leftPart = command.split("(\"")
+                # Remove rigth quote and parentheses from the id
+                id_arg_rightPart = id_arg_leftPart[1].split("\")")
+                id_arg = id_arg_rightPart[0]  # now we have the id
+
+                # Concatenate class + space + id -> arg for do_destroy
+                arg_for_do_destoy = class_arg + " " + id_arg
+
+                # To use do_destroy, we have to pass the class + id
+                HBNBCommand.do_destroy(self, arg_for_do_destoy)
             else:
                 print(f"*** Unknown syntax: {arg}")  # This is the default msg
         except Exception:
