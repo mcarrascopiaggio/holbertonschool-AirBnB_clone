@@ -6,6 +6,7 @@ test Class Place
 
 import unittest
 import models
+from models.base_model import BaseModel
 from models.place import Place
 
 
@@ -29,11 +30,11 @@ class TestCity(unittest.TestCase):
         self.assertEqual(Place.latitude, 0.0)
         self.assertEqual(Place.longitude, 0.0)
         self.assertEqual(Place.amenity_ids, [])
-        self.assertTrue(issubclass(State, BaseModel))
+        self.assertTrue(issubclass(Place, BaseModel))
 
     def test_instance(self):
         """
-        test instance of state
+        test instance of place
         """
         test = Place()
         self.assertEqual(test.name, "")
@@ -47,7 +48,7 @@ class TestCity(unittest.TestCase):
         self.assertEqual(test.latitude, 0.0)
         self.assertEqual(test.longitude, 0.0)
         self.assertEqual(test.amenity_ids, [])
-        self.assertTrue(issubclass(State, BaseModel))
+        self.assertTrue(issubclass(Place, BaseModel))
 
 
 if __name__ == "__main__":
