@@ -5,11 +5,12 @@ test Class Amenity
 
 
 import unittest
+from models.base_model import BaseModel
 import models
 from models.amenity import Amenity
 
 
-class Test  Amenity(unittest.TestCase):
+class TestAmenity(unittest.TestCase):
     """
     Test amenity
     """
@@ -19,7 +20,7 @@ class Test  Amenity(unittest.TestCase):
         test class & test subclass
         """
         self.assertEqual(Amenity.name, "")
-        self.assertTrue(issubclass(State, BaseModel))
+        self.assertTrue(issubclass(Amenity, BaseModel))
 
     def test_instance(self):
         """
@@ -27,7 +28,7 @@ class Test  Amenity(unittest.TestCase):
         """
         test = Amenity()
         self.assertEqual(test.name, "")
-        self.assertTrue(issubclass(State, BaseModel))
+        self.assertTrue(issubclass(Amenity, BaseModel))
 
 
 if __name__ == "__main__":
