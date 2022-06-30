@@ -161,6 +161,26 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, split_arg[2], split_arg[3])
                 storage.save()
 
+    def do_count(self, arg):
+        """
+        Retrieve the number of instances of a class.
+        Use in the "default" section, usage: <class name>.count()
+        """
+
+        # Execute code only if "arg" is in the classes list.
+        if arg in HBNBCommand.classes_list:
+            cont = 0
+            # Retrieve all the objects saved in file.json
+            aux_dict = storage.all()
+            for key, value in aux_dict.items():
+                # Si arg se encuentra en key (recordar que key es: clase . id)
+                if arg in key:
+                    cont += 1  # Sumar uno cada vez que se encuentre la clase
+            print(cont)
+        else:
+            # Print same msg as the other do_ methods when class doesn't exist
+            print("** class doesn't exist **")
+
     def default(self, arg):
         """
         The default method can be overridden for handling commands for which
@@ -178,6 +198,8 @@ class HBNBCommand(cmd.Cmd):
 
             if command == "all()":
                 HBNBCommand.do_all(self, class_arg)  # Use of do_all
+            elif command == "count()":
+                HBNBCommand.do_count(self, class_arg)
             else:
                 print(f"*** Unknown syntax: {arg}")  # This is the default msg
         except Exception:
