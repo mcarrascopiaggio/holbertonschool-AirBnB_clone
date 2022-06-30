@@ -161,6 +161,28 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, split_arg[2], split_arg[3])
                 storage.save()
 
+    def default(self, arg):
+        """
+        The default method can be overridden for handling commands for which
+        there is no do_xxx method.
+        Advance tasks --> all(), count(), show(), destroy(), update()
+
+        Use of "try" and "except" to not have problems with "Unknown syntax"
+        errors.
+        """
+
+        try:
+            split_arg = arg.split(".")  # separar por punto el argumento "arg"
+            class_arg = split_arg[0]  # This will be the class argument
+            command = split_arg[1]  # This will be the command, ex: all()
+
+            if command == "all()":
+                HBNBCommand.do_all(self, class_arg)  # Use of do_all
+            else:
+                print(f"*** Unknown syntax: {arg}")  # This is the default msg
+        except Exception:
+            print(f"*** Unknown syntax: {arg}")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
