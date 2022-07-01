@@ -252,26 +252,30 @@ class HBNBCommand(cmd.Cmd):
             elif command_sin_parentheses == "update":
                 # Separate id argument:
 
-                second_split = split_arg[1].split(",")
+                id_split = split_arg[1].split("(")
                 # Nos quedamos con la parte que esta la id
-                id_split = second_split[0]
-                # Split por comillas
-                id_arg_split = id_split.split('"')
-                id_arg = id_arg_split[1]  # This is the id argument
+                id_split = id_split[1]
+                # Split por coma
+                coma_split = id_split.split(',')
+                id_arg = coma_split[0]   # This is the id argument with quotes
+                id_arg = id_arg.strip('"')  # Remove quotes
 
                 # Separate First attribute to be updated:
 
-                # Remove quotes to the first attribute
-                first_att_split = second_split[1].split('"')
-                f_att = first_att_split[1]  # This is the first attribute
+                arg1 = coma_split[1]  # This is the first attribute
+                # Remove spaces and quotes after and before of first argument
+                arg1 = arg1.strip()
+                arg1 = arg1.strip('"')
 
                 # Separate Second att, value to update the first attribute:
 
-                second_att_split = second_split[2].split('"')
-                second_att = second_att_split[1]  # This is the second att
+                arg2_split = coma_split[2]  # This is the second att
+                arg2_split = arg2_split.split(")")
+                # Remove spaces after and before of second argument
+                arg2 = arg2_split[0].strip()
 
                 # Concatenate: class + '' + id + '' + 1 att + '' + 2 att
-                arg = class_arg + " " + id_arg + " " + f_att + " " + second_att
+                arg = class_arg + " " + id_arg + " " + arg1 + " " + arg2
 
                 HBNBCommand.do_update(self, arg)  # Use of do_update
             else:
