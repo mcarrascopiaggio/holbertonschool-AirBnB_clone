@@ -168,8 +168,15 @@ class HBNBCommand(cmd.Cmd):
                 # Se usa el metodo get() para obtener el value de la "key"
                 # correspondiente y se lo guarda en la variable "obj" ya que
                 # si la key esta dentro de "aux_dict" se viene a este else.
+
+                # Obtenemos el tipo del dato de "value" usando eval():
+                cast_type = type(eval(split_arg[3]))
+
+                # This is the value to update the argument passed
+                value_arg = split_arg[3]
+
                 obj = aux_dict.get(key)
-                setattr(obj, split_arg[2], split_arg[3])
+                setattr(obj, split_arg[2], cast_type(value_arg))
                 storage.save()
 
     def do_count(self, arg):
