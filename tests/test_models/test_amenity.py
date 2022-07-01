@@ -15,6 +15,12 @@ class TestAmenity(unittest.TestCase):
     Test amenity
     """
 
+    def test_documentation(self):
+        """
+        check if class has documentation
+        """
+        self.assertIsNotNone(Amenity.__doc__)
+
     def test_class(self):
         """
         test class & test subclass

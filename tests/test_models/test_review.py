@@ -15,6 +15,12 @@ class TestCity(unittest.TestCase):
     Test Review
     """
 
+    def test_documentation(self):
+        """
+        check if class has documentation
+        """
+        self.assertIsNotNone(Review.__doc__)
+
     def test_class(self):
         """
         test class & test subclass

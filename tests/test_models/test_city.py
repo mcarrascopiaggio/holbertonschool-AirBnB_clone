@@ -15,6 +15,12 @@ class TestCity(unittest.TestCase):
     Test City
     """
 
+    def test_documentation(self):
+        """
+        check if class has documentation
+        """
+        self.assertIsNotNone(City.__doc__)
+
     def test_class(self):
         """
         test class & test subclass

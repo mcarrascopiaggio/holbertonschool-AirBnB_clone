@@ -15,6 +15,12 @@ class TestState(unittest.TestCase):
     Test User
     """
 
+    def test_documentation(self):
+        """
+        check if class has documentation
+        """
+        self.assertIsNotNone(User.__doc__)
+
     def test_class(self):
         """
         test class & test subclass
