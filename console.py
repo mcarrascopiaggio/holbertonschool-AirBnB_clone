@@ -47,6 +47,8 @@ class HBNBCommand(cmd.Cmd):
         prints the "id".
         Use of method "eval" to create an instance of the correct class if it
         is in the list of the class attribute: "classes_list".
+
+        Usage: create <class name>
         """
         if not arg:
             print("** class name missing **")
@@ -62,6 +64,8 @@ class HBNBCommand(cmd.Cmd):
         """
         Prints the string representation of an instance based on the class
         name and id.
+
+        Usage: show <class name> <id>
         """
         split_arg = arg.split()  # use of split() method to parse "arg"
 
@@ -84,6 +88,8 @@ class HBNBCommand(cmd.Cmd):
         """
         Deletes an instance based on the class name and id
         (save the change into the JSON file).
+
+        Usage: destroy <class name> <id>
         """
         split_arg = arg.split()  # use of split() method to parse "arg"
 
@@ -107,6 +113,8 @@ class HBNBCommand(cmd.Cmd):
         """
         Prints all string representation of all instances based or not
         on the class name.
+
+        Usage: all or all <class name>
         """
         split_arg = arg.split()  # use of split() method to parse "arg"
         # save return of all() method in aux_dict to be able iterate it
@@ -130,6 +138,9 @@ class HBNBCommand(cmd.Cmd):
         """
         Updates an instance based on the class name and id by adding or
         updating attribute (save the change into the JSON file).
+
+        Usage: update <class name> <id> <attribute name> "<attribute value>"
+
         Setattr(): https://www.w3schools.com/python/ref_func_setattr.asp
         get(): https://www.w3schools.com/python/ref_dictionary_get.asp
         """
@@ -228,6 +239,31 @@ class HBNBCommand(cmd.Cmd):
 
                 # To use do_destroy, we have to pass the class + id
                 HBNBCommand.do_destroy(self, arg_for_do_destoy)
+            elif command_sin_parentheses == "update":
+                # Separate id argument:
+
+                second_split = split_arg[1].split(",")
+                # Nos quedamos con la parte que esta la id
+                id_split = second_split[0]
+                # Split por comillas
+                id_arg_split = id_split.split('"')
+                id_arg = id_arg_split[1]  # This is the id argument
+
+                # Separate First attribute to be updated:
+
+                # Remove quotes to the first attribute
+                first_att_split = second_split[1].split('"')
+                f_att = first_att_split[1]  # This is the first attribute
+
+                # Separate Second att, value to update the first attribute:
+
+                second_att_split = second_split[2].split('"')
+                second_att = second_att_split[1]  # This is the second att
+
+                # Concatenate: class + '' + id + '' + 1 att + '' + 2 att
+                arg = class_arg + " " + id_arg + " " + f_att + " " + second_att
+
+                HBNBCommand.do_update(self, arg)  # Use of do_update
             else:
                 print(f"*** Unknown syntax: {arg}")  # This is the default msg
         except Exception:
