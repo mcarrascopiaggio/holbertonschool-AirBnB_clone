@@ -56,6 +56,23 @@ class TestCity(unittest.TestCase):
         self.assertEqual(test.amenity_ids, [])
         self.assertTrue(issubclass(Place, BaseModel))
 
+    def test_attributetype(self):
+        """
+        test attribute test
+        """
+        test = Place()
+        self.assertEqual(type(test.city_id), str)
+        self.assertEqual(type(test.user_id), str)
+        self.assertEqual(type(test.name), str)
+        self.assertEqual(type(test.description), str)
+        self.assertEqual(type(test.number_rooms), int)
+        self.assertEqual(type(test.number_bathrooms), int)
+        self.assertEqual(type(test.max_guest), int)
+        self.assertEqual(type(test.price_by_night), int)
+        self.assertEqual(type(test.latitude), float)
+        self.assertEqual(type(test.longitude), float)
+        self.assertEqual(type(test.amenity_ids), list)
+
 
 if __name__ == "__main__":
     unittest.main()

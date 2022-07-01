@@ -36,6 +36,13 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(test.name, "")
         self.assertTrue(issubclass(Amenity, BaseModel))
 
+    def test_attributetype(self):
+        """
+        test attribute test
+        """
+        test = Amenity()
+        self.assertEqual(type(test.name), str)
+
 
 if __name__ == "__main__":
     unittest.main()

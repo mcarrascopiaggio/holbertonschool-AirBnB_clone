@@ -40,6 +40,15 @@ class TestCity(unittest.TestCase):
         self.assertEqual(test.text, "")
         self.assertTrue(issubclass(Review, BaseModel))
 
+    def test_attributetype(self):
+        """
+        test attribute test
+        """
+        test = Review()
+        self.assertEqual(type(test.place_id), str)
+        self.assertEqual(type(test.user_id), str)
+        self.assertEqual(type(test.text), str)
+
 
 if __name__ == "__main__":
     unittest.main()

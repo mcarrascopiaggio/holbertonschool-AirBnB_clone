@@ -36,6 +36,13 @@ class TestState(unittest.TestCase):
         self.assertEqual(test.name, "")
         self.assertTrue(issubclass(State, BaseModel))
 
+    def test_attributetype(self):
+        """
+        test attribute test
+        """
+        test = State()
+        self.assertEqual(type(test.name), str)
+
 
 if __name__ == "__main__":
     unittest.main()
