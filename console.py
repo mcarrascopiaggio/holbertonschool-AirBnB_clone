@@ -174,6 +174,7 @@ class HBNBCommand(cmd.Cmd):
 
                 # This is the value to update the argument passed
                 value_arg = split_arg[3]
+                value_arg = value_arg.strip('"')
 
                 obj = aux_dict.get(key)
                 setattr(obj, split_arg[2], cast_type(value_arg))
