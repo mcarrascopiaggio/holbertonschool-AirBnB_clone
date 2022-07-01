@@ -143,6 +143,7 @@ class HBNBCommand(cmd.Cmd):
 
         Setattr(): https://www.w3schools.com/python/ref_func_setattr.asp
         get(): https://www.w3schools.com/python/ref_dictionary_get.asp
+        strip(): https://www.w3schools.com/python/ref_string_strip.asp
         """
         split_arg = arg.split()  # use of split() method to parse "arg"
 
@@ -174,6 +175,7 @@ class HBNBCommand(cmd.Cmd):
 
                 # This is the value to update the argument passed
                 value_arg = split_arg[3]
+                # Use of strip to remove quotes
                 value_arg = value_arg.strip('"')
 
                 obj = aux_dict.get(key)
