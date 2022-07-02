@@ -94,6 +94,13 @@ class test_Base(unittest.TestCase):
 
     # test prueba checker:
 
+    def test_instancias(self):
+        """checkear si se crearon las instancias"""
+        obj1 = BaseModel()
+        self.assertTrue(hasattr(obj1, "id"))
+        self.assertTrue(hasattr(obj1, "created_at"))
+        self.assertTrue(hasattr(obj1, "updated_at"))
+
     def test_kwarg(self):
         """test que valida que se llene mediante un diccionario"""
         dic = {'id': '12', 'created_at': '2017-09-28T21:03:54.052302',
