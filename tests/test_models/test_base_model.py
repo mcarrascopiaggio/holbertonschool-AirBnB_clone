@@ -94,13 +94,6 @@ class test_Base(unittest.TestCase):
 
     # test prueba checker:
 
-    def test_instancias(self):
-        """checkear si se crearon las instancias"""
-        obj1 = BaseModel()
-        self.assertTrue(hasattr(obj1, "id"))
-        self.assertTrue(hasattr(obj1, "created_at"))
-        self.assertTrue(hasattr(obj1, "updated_at"))
-
     def test_id(self):
         """2 instancias deben tener diferente id"""
         obj1 = BaseModel()
