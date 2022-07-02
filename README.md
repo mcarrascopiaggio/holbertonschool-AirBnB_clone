@@ -87,6 +87,7 @@ EOF  help  quit
 (hbnb)
 $
 ```
+```
 
 ## Description of each command:
 
@@ -111,9 +112,11 @@ create <class>
 (hbnb)
 ```
 * all Usage:
+
 ```bash
 all <class>
 ```
+
 ```bash
 (hbnb) all City                                                                                                                                 
 ["[City] (07062be7-fd57-4791-88a6-6a78806398c9) {'id': '07062be7-fd57-4791-88a6-6a78806398c9', 
@@ -121,6 +124,47 @@ all <class>
 , 54, 356353), 'updated_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356365)}"]                                                                
 (hbnb)
 ```
+* show Usage:
+
+```bash
+show <class> id
+```
+
+```bash
+(hbnb) show City 07062be7-fd57-4791-88a6-6a78806398c9
+[City] (07062be7-fd57-4791-88a6-6a78806398c9) {'id': '07062be7-fd57-4791-88a6-6a78806398c9', 'created_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356353), 'updated_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356365)}
+(hbnb) 
+```
+* destroy Usage:
+
+```bash
+destroy <class> id
+```
+
+```bash
+(hbnb) show City 07062be7-fd57-4791-88a6-6a78806398c9                                                                                           
+[City] (07062be7-fd57-4791-88a6-6a78806398c9) {'id': '07062be7-fd57-4791-88a6-6a78806398c9', 'created_at': datetime.datetime(2022, 7, 1, 16, 6, 
+54, 356353), 'updated_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356365)}                                                                    
+(hbnb) destroy City 07062be7-fd57-4791-88a6-6a78806398c9                                                                                        
+(hbnb) show City 07062be7-fd57-4791-88a6-6a78806398c9                                                                                           
+** no instance found **
+```
+* update Usage:
+
+```bash
+update <class name> <id> <attribute name> "<attribute value>
+```
+
+```bash
+(hbnb) all Review                                                                                                                               
+["[Review] (904fd94e-2872-4f7f-8160-446eb41b49e4) {'id': '904fd94e-2872-4f7f-8160-446eb41b49e4', 'created_at': datetime.datetime(2022, 7, 1, 16,
+ 7, 8, 819977), 'updated_at': datetime.datetime(2022, 7, 1, 16, 7, 8, 819989)}"]                                                                
+(hbnb) update Review 904fd94e-2872-4f7f-8160-446eb41b49e4 id 2222                                                                               
+(hbnb) all Review                                                                                                                               
+["[Review] (2222) {'id': 2222, 'created_at': datetime.datetime(2022, 7, 1, 16, 7, 8, 819977), 'updated_at': datetime.datetime(2022, 7, 1, 16, 7,
+ 8, 819989)}"]                                                                                                                                  
+```
+
 ## Test
 * unittest module
 * Execution command: ```python3 -m unittest discover tests```
