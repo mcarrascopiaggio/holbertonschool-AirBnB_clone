@@ -99,14 +99,12 @@ $
 | update         | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
 
 ### Usage & Examples:
-* create:
-	Usage:
+* create Usage:
 ```
 create <class>
 ```
-
-	Ex:
-```bash
+Ex:
+```
 (hbnb) create User
 38f22813-2753-4d42-b37c-57a17f1e4f88
 (hbnb)
