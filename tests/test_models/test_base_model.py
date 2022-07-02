@@ -100,12 +100,6 @@ class test_Base(unittest.TestCase):
         dic = obj.to_dict()
         self.assertEqual(type(dic["created_at"]), str)
         self.assertEqual(type(dic["updated_at"]), str)
-        
-    def test_str(self):
-        """chequeo de la str function"""
-        obj = BaseModel()
-        self.assertEqual(type(str(obj)), str)
-        # self.assertEqual(type(__str__(obj)), str)
 
     if __name__ == '__main__':
         unittest.main()
