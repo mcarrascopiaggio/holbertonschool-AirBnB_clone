@@ -99,7 +99,19 @@ $
 | update         | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
 
 ### Usage & Examples:
+* create USAGE:
 
+```
+create <class>
+```
+
+Ex:
+```bash
+(hbnb) create User
+38f22813-2753-4d42-b37c-57a17f1e4f88
+(hbnb)
+```
+User
 ## Test
 * unittest module
 * Execution command: ```python3 -m unittest discover tests```
@@ -112,8 +124,6 @@ echo "python3 -m unittest discover tests" | bash
 ```
 
 ### run test in non-interactive mode
-
-To run the tests in non-interactive mode, and discover all the test, you can use the command:
 
 ```bash
 python3 -m unittest discover tests
