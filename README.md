@@ -87,7 +87,6 @@ EOF  help  quit
 (hbnb)
 $
 ```
-```
 
 ## Description of each command:
 
