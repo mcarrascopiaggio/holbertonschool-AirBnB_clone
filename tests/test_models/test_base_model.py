@@ -100,20 +100,7 @@ class test_Base(unittest.TestCase):
         dic = obj.to_dict()
         self.assertEqual(type(dic["created_at"]), str)
         self.assertEqual(type(dic["updated_at"]), str)
-
-    def test_kwarg(self):
-        """test que valida que se llene mediante un diccionario"""
-        dic = {'id': '12', 'created_at': '2017-09-28T21:03:54.052302',
-               'updated_at': '2017-09-28T21:03:54.052302'}
-        obj1 = BaseModel(**dic)
-        data1 = '%Y-%m-%dT%H:%M:%S.%f'
-        data2 = '2017-09-28T21:03:54.052302'
-
-        self.assertEqual(obj1.id, "12")
-        self.assertEqual(obj1.created_at, datetime.strptime(data2, data1))
-        self.assertEqual(obj1.updated_at, datetime.strptime(data2, data1))
-        self.assertEqual(type(dic["created_at"]), str)
-
+        
     def test_str(self):
         """chequeo de la str function"""
         obj = BaseModel()
