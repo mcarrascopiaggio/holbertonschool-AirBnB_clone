@@ -60,7 +60,14 @@ class BaseModel:
         correspondiente (con self) y el attribute del cual se quiere
         obtener el valor.
         """
-        new_dict = {}
+
+        new_dict = self.__dict__.copy()
+        new_dict["__class__"] = self.__class__.__name__
+        new_dict["updated_at"] = self.updated_at.isoformat()
+        new_dict["created_at"] = self.updated_at.isoformat()
+        return new_dict
+
+        """new_dict = {}
 
         for attribute in self.__dict__:
             if attribute == "created_at" or attribute == "updated_at":
@@ -69,4 +76,4 @@ class BaseModel:
                 new_dict[attribute] = getattr(self, attribute)
         new_dict['__class__'] = self.__class__.__name__
         # Se agrega la key: "__class__" y se le asigna el nombre de la clase.
-        return (new_dict)
+        return (new_dict)"""
