@@ -96,7 +96,28 @@ $
 | all            | Prints all string representation of all instances based or not on the class name.
 | show           | Prints the string representation of an instance based on the class name and id.
 | destroy        | Deletes an instance based on the class name and id (save the change into the JSON file).
-| update         |  Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
+| update         | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
+
+### Usage & Examples:
+
+## Test
+* unittest module
+* Execution command: ```python3 -m unittest discover tests```
+* or: ```python3 -m unittest tests/test_models/test_base.py```
+
+### run test in interactive mode
+
+```bash
+echo "python3 -m unittest discover tests" | bash
+```
+
+### run test in non-interactive mode
+
+To run the tests in non-interactive mode, and discover all the test, you can use the command:
+
+```bash
+python3 -m unittest discover tests
+```
 
 ## Authors :pen:
 
