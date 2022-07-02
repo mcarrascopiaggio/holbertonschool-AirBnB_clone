@@ -21,7 +21,7 @@ class BaseModel:
         instance is created and it will be updated every time you change
         your object
         """
-        if kwargs:
+        if kwargs and kwargs is not None:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     setattr(self, key,
