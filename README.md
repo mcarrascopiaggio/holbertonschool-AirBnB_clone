@@ -113,9 +113,9 @@ create <class>
 ```
 all <class>
 ```
-```
 (hbnb) all City                                                                                                                                 
-["[City] (07062be7-fd57-4791-88a6-6a78806398c9) {'id': '07062be7-fd57-4791-88a6-6a78806398c9', 'created_at': datetime.datetime(2022, 7, 1, 16, 6
+["[City] (07062be7-fd57-4791-88a6-6a78806398c9) {'id': '07062be7-fd57-4791-88a6-6a78806398c9', 
+'created_at': datetime.datetime(2022, 7, 1, 16, 6
 , 54, 356353), 'updated_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356365)}"]                                                                
 (hbnb)
 ```
