@@ -92,11 +92,11 @@ $
 
 | Command          |Desription
 |:----------------|:-------------------------------:|
-| |create         | Creates a new instance of a class, saves it (to the JSON file) and prints the id. 
-| |all            | Prints all string representation of all instances based or not on the class name.
-| |show           | Prints the string representation of an instance based on the class name and id.
-| |destroy        | Deletes an instance based on the class name and id (save the change into the JSON file).
-| |update         |  Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
+| create         | Creates a new instance of a class, saves it (to the JSON file) and prints the id. 
+| all            | Prints all string representation of all instances based or not on the class name.
+| show           | Prints the string representation of an instance based on the class name and id.
+| destroy        | Deletes an instance based on the class name and id (save the change into the JSON file).
+| update         |  Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
 | |
 | |
 | |
