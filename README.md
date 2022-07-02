@@ -99,7 +99,7 @@ $
 | update         | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
 
 ### Usage & Examples:
-* create Usage:
+* create Usage & Example:
 
 ```bash
 create <class>
@@ -110,7 +110,7 @@ create <class>
 38f22813-2753-4d42-b37c-57a17f1e4f88
 (hbnb)
 ```
-* all Usage:
+* all Usage & Example:
 
 ```bash
 all <class>
@@ -124,7 +124,7 @@ all <class>
 , 54, 356353), 'updated_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356365)}"]                                                                
 (hbnb)
 ```
-* show Usage:
+* show Usage & Example:
 
 ```bash
 show <class> id
@@ -136,7 +136,7 @@ show <class> id
 [City] (07062be7-fd57-4791-88a6-6a78806398c9) {'id': '07062be7-fd57-4791-88a6-6a78806398c9', 'created_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356353), 'updated_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356365)}
 (hbnb) 
 ```
-* destroy Usage:
+* destroy Usage & Example:
 
 ```bash
 destroy <class> id
@@ -151,7 +151,7 @@ destroy <class> id
 (hbnb) show City 07062be7-fd57-4791-88a6-6a78806398c9                                                                                           
 ** no instance found **
 ```
-* update Usage:
+* update Usage & Example:
 
 ```bash
 update <class name> <id> <attribute name> "<attribute value>
