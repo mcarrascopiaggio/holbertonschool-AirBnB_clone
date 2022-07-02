@@ -101,13 +101,10 @@ class test_Base(unittest.TestCase):
         self.assertEqual(type(dic["created_at"]), str)
         self.assertEqual(type(dic["updated_at"]), str)
 
-    def test_data_dif(self):
-        """crear 2 instancias en diferentes tiempos"""
-        from time import sleep
+    def test_date(self):
+        """test date"""
         obj1 = BaseModel()
-        sleep(0.1)
-        obj2 = BaseModel()
-        self.assertNotEqual(obj1.created_at, obj2.created_at)
+        self.assertEqual(obj1.created_at, obj1.updated_at)
 
     if __name__ == '__main__':
         unittest.main()
