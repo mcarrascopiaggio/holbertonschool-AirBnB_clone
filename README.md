@@ -12,6 +12,7 @@ The piece is mainly to manipulate a powerful storage system. This storage engine
 This abstraction will also allow us to change the type of storage easily without updating all of our codebase.
 The console will be a tool to validate this storage engine.
 Below is a diagram showing the complete project. In this instance we will cover only the console and the storage engine.
+
 <img src="https://github.com/agusfl/holbertonschool-AirBnB_clone/blob/master/Diagram.png" />
 
 ## Learning objectives:
@@ -87,13 +88,15 @@ EOF  help  quit
 $
 ```
 
-## Description of each file:
+## Description of each command:
 
-| Files          |Desription
+| Command          |Desription
 |:----------------|:-------------------------------:|
-| |
-| |
-| |
+| |create         | Creates a new instance of a class, saves it (to the JSON file) and prints the id. 
+| |all            | Prints all string representation of all instances based or not on the class name.
+| |show           | Prints the string representation of an instance based on the class name and id.
+| |destroy        | Deletes an instance based on the class name and id (save the change into the JSON file).
+| |update         |  Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file.
 | |
 | |
 | |
