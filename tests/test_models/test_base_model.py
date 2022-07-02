@@ -121,25 +121,12 @@ class test_Base(unittest.TestCase):
         self.assertEqual(type(dic["created_at"]), str)
         self.assertEqual(type(dic["updated_at"]), str)
 
-    def test_save(self):
-        """test save"""
-        obj1 = BaseModel()
-        obj1.save()
-        self.assertNotEqual(obj1.created_at, obj1.updated_at)
-
     def test_dict(self):
         """comprobar typo del update luego de to_dict()"""
         obj1 = BaseModel()
         dic = obj1.to_dict()
         self.assertEqual(type(dic["updated_at"]), str)
         self.assertEqual(type(dic["created_at"]), str)
-
-    def test_dict2(self):
-        """comprobar existencia de keys """
-        obj = BaseModel()
-        self.assertIn("id", obj.to_dict())
-        self.assertIn("created_at", obj.to_dict())
-        self.assertIn("updated_at", obj.to_dict())
 
     def test_dict_equal(self):
         """comprobar igualdad de attributos"""
