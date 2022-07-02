@@ -94,13 +94,6 @@ class test_Base(unittest.TestCase):
 
     # test prueba checker:
 
-    def test_id(self):
-        """2 instancias deben tener diferente id"""
-        obj1 = BaseModel()
-        obj2 = BaseModel()
-        self.assertNotEqual(obj1.id, obj2.id)
-        self.assertFalse(obj1.id == obj2.id)
-
     def test_format_date(self):
         """chequeamos el formato de date"""
         obj = BaseModel()
