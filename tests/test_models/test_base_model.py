@@ -101,6 +101,13 @@ class test_Base(unittest.TestCase):
         self.assertTrue(hasattr(obj1, "created_at"))
         self.assertTrue(hasattr(obj1, "updated_at"))
 
+    def test_id(self):
+        """2 instancias deben tener diferente id"""
+        obj1 = BaseModel()
+        obj2 = BaseModel()
+        self.assertNotEqual(obj1.id, obj2.id)
+        self.assertFalse(obj1.id == obj2.id)
+
     def test_kwarg(self):
         """test que valida que se llene mediante un diccionario"""
         dic = {'id': '12', 'created_at': '2017-09-28T21:03:54.052302',
