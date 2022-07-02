@@ -47,10 +47,9 @@ class FileStorage():
         try:
             for key, value in self.__objects.items():
                 aux_dict[key] = value.to_dict()
-            with open(self.__file_path, mode="w", encoding="UTF-8")
-            as json_file:
+            with open(self.__file_path, mode="w", encoding="UTF-8") as json_file:
                 json.dump(aux_dict, json_file)
-        except Exception:
+        except Exeption:
             pass
 
     def reload(self):
