@@ -92,5 +92,93 @@ class test_Base(unittest.TestCase):
         test_dict = test.to_dict()
         self.assertIsInstance(test_dict, dict)
 
+    # test prueba checker:
+
+    def test_instancias(self):
+        """checkear si se crearon las instancias"""
+        obj1 = BaseModel()
+        self.assertTrue(hasattr(obj1, "id"))
+        self.assertTrue(hasattr(obj1, "created_at"))
+        self.assertTrue(hasattr(obj1, "updated_at"))
+
+    def test_id(self):
+        """2 instancias deben tener diferente id"""
+        obj1 = BaseModel()
+        obj2 = BaseModel()
+        self.assertNotEqual(obj1.id, obj2.id)
+        self.assertFalse(obj1.id == obj2.id)
+
+    def test_date_types(self):
+        """chequeamos tipos date"""
+        obj = BaseModel()
+        self.assertEqual(type(obj.created_at), datetime)
+        self.assertEqual(type(obj.updated_at), datetime)
+
+    def test_format_date(self):
+        """chequeamos el formato de date"""
+        obj = BaseModel()
+        dic = obj.to_dict()
+        self.assertEqual(type(dic["created_at"]), str)
+        self.assertEqual(type(dic["updated_at"]), str)
+
+    def test_save(self):
+        """test save"""
+        obj1 = BaseModel()
+        obj1.save()
+        self.assertNotEqual(obj1.created_at, obj1.updated_at)
+
+    def test_dict(self):
+        """comprobar typo del update luego de to_dict()"""
+        obj1 = BaseModel()
+        dic = obj1.to_dict()
+        self.assertEqual(type(dic["updated_at"]), str)
+        self.assertEqual(type(dic["created_at"]), str)
+
+    def test_dict2(self):
+        """comprobar existencia de keys """
+        obj = BaseModel()
+        self.assertIn("id", obj.to_dict())
+        self.assertIn("created_at", obj.to_dict())
+        self.assertIn("updated_at", obj.to_dict())
+
+    def test_dict_equal(self):
+        """comprobar igualdad de attributos"""
+        obj = BaseModel()
+        self.assertEqual(type(obj.to_dict()), dict)
+
+    def test_kwarg(self):
+        """test que valida que se llene mediante un diccionario"""
+        dic = {'id': '12', 'created_at': '2017-09-28T21:03:54.052302',
+               'updated_at': '2017-09-28T21:03:54.052302'}
+        obj1 = BaseModel(**dic)
+        data1 = '%Y-%m-%dT%H:%M:%S.%f'
+        data2 = '2017-09-28T21:03:54.052302'
+
+        self.assertEqual(obj1.id, "12")
+        self.assertEqual(obj1.created_at, datetime.strptime(data2, data1))
+        self.assertEqual(obj1.updated_at, datetime.strptime(data2, data1))
+        self.assertEqual(type(dic["created_at"]), str)
+
+    def test_kwargs_more(self):
+        """chequeamos que este creando bien los atributos con kwargs"""
+        obj = BaseModel(name="Naruto")
+        self.assertTrue(hasattr(obj, "name"))
+
+    def test_no_kwarg(self):
+        """chequeamos la instanciacion cunado no recibe args"""
+        self.assertEqual(BaseModel, type(BaseModel()))
+
+    def test_str(self):
+        """chequeo de la str function"""
+        obj = BaseModel()
+        self.assertEqual(type(str(obj)), str)
+        # self.assertEqual(type(__str__(obj)), str)
+
+    def test_more_attr(self):
+        """chequeamos si se estan creando atributos"""
+        obj = BaseModel()
+        obj.name = "naruto"
+        self.assertIn("name", obj.to_dict())
+
     if __name__ == '__main__':
         unittest.main()
