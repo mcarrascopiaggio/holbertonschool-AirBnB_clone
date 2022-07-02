@@ -103,13 +103,24 @@ $
 ```
 create <class>
 ```
-Ex:
+
 ```
 (hbnb) create User
 38f22813-2753-4d42-b37c-57a17f1e4f88
 (hbnb)
 ```
-User
+* all Usage:
+```
+all <class>
+```
+```
+
+```
+(hbnb) all City                                                                                                                                 
+["[City] (07062be7-fd57-4791-88a6-6a78806398c9) {'id': '07062be7-fd57-4791-88a6-6a78806398c9', 'created_at': datetime.datetime(2022, 7, 1, 16, 6
+, 54, 356353), 'updated_at': datetime.datetime(2022, 7, 1, 16, 6, 54, 356365)}"]                                                                
+(hbnb)
+```
 ## Test
 * unittest module
 * Execution command: ```python3 -m unittest discover tests```
