@@ -114,6 +114,7 @@ create <class>
 
 ```bash
 all <class>
+<class name>.all()
 ```
 
 ```bash
@@ -127,6 +128,7 @@ all <class>
 
 ```bash
 show <class> id
+<class name>.show(<id>)
 ```
 
 ```bash
@@ -138,6 +140,7 @@ show <class> id
 
 ```bash
 destroy <class> id
+<class name>.destroy(<id>)
 ```
 
 ```bash
@@ -152,6 +155,7 @@ destroy <class> id
 
 ```bash
 update <class name> <id> <attribute name> "<attribute value>
+<class name>.update(<id>, <attribute name>, <attribute value>)
 ```
 
 ```bash
