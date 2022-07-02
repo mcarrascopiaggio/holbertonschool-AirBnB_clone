@@ -92,10 +92,10 @@ class test_Base(unittest.TestCase):
         test_dict = test.to_dict()
         self.assertIsInstance(test_dict, dict)
 
-    # test prueba checker:
-
     def test_format_date(self):
-        """chequeamos el formato de date"""
+        """
+        test date format
+        """
         obj = BaseModel()
         dic = obj.to_dict()
         self.assertEqual(type(dic["created_at"]), str)
