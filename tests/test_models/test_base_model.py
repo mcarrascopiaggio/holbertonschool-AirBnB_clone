@@ -161,11 +161,5 @@ class test_Base(unittest.TestCase):
         self.assertEqual(type(str(obj)), str)
         # self.assertEqual(type(__str__(obj)), str)
 
-    def test_more_attr(self):
-        """chequeamos si se estan creando atributos"""
-        obj = BaseModel()
-        obj.name = "naruto"
-        self.assertIn("name", obj.to_dict())
-
     if __name__ == '__main__':
         unittest.main()
