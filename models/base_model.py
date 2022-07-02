@@ -24,8 +24,8 @@ class BaseModel:
         if kwargs and kwargs is not None:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
-                    setattr(self, key,
-                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                    setattr(self, key, value)
                 elif key == "__class__":
                     pass  # No le seteamos nada,solo usamos pass
                 else:
