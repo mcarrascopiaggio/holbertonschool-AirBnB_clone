@@ -92,10 +92,5 @@ class test_Base(unittest.TestCase):
         test_dict = test.to_dict()
         self.assertIsInstance(test_dict, dict)
 
-    def test_str(self):
-        """
-        test print format
-        """
-
     if __name__ == '__main__':
         unittest.main()
