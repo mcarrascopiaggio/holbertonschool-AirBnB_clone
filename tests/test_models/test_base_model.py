@@ -108,12 +108,6 @@ class test_Base(unittest.TestCase):
         self.assertNotEqual(obj1.id, obj2.id)
         self.assertFalse(obj1.id == obj2.id)
 
-    def test_date_types(self):
-        """chequeamos tipos date"""
-        obj = BaseModel()
-        self.assertEqual(type(obj.created_at), datetime)
-        self.assertEqual(type(obj.updated_at), datetime)
-
     def test_format_date(self):
         """chequeamos el formato de date"""
         obj = BaseModel()
