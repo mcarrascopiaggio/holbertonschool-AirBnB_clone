@@ -91,7 +91,7 @@ $
 ## Description of each command:
 
 | Command          |Desription                      |Usage
-|:----------------|:-------------------------------:|----------------------------------------------------------------------------------------
+|:----------------|:-------------------------------:|-------------------------------------------------------------:|
 | create         | Creates a new instance of a class, saves it (to the JSON file) and prints the id. | create <class name>
 | all            | Prints all string representation of all instances based or not on the class name. | all or all  <class name>
 | show           | Prints the string representation of an instance based on the class name and id.   | show <class name> <id>
