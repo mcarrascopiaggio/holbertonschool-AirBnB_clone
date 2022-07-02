@@ -8,6 +8,11 @@ of the AirBnB website (front-end and back-end).
 In this first part we are going to use Python programming language in orther to build
 a command interpreter, this is very similar to a shell but limited to a specific use case.
 In our case we want to manage the objects that we are going to create in this project.
+The piece is mainly to manipulate a powerful storage system. This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”.
+This abstraction will also allow us to change the type of storage easily without updating all of our codebase.
+The console will be a tool to validate this storage engine.
+Below is a diagram showing the complete project. In this instance we will cover only the console and the storage engine.
+<img src="https://github.com/agusfl/holbertonschool-AirBnB_clone/blob/master/Diagram.png" />
 
 ## Learning objectives:
 
