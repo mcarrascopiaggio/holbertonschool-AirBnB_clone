@@ -2,8 +2,9 @@
 <img src="https://user-images.githubusercontent.com/69850751/175876062-f252cc1b-bd44-46b3-9ddb-a7692b2eede4.png" />
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/agusfl/holbertonschool-AirBnB_clone)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/holbertonschool-AirBnB_clone)
-![Lines of code](https://img.shields.io/tokei/lines/github/mcarrascopiaggio/holbertonschool-AirBnB_clone)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/agusfl/holbertonschool-AirBnB_clone)
+![Lines of code](https://img.shields.io/tokei/lines/github/agusfl/holbertonschool-AirBnB_clone)
+
 ## Description of the project:
 
 This is the **first** of **seven** parts of the AirBnB clone project, which will result in a clone
