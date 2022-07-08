@@ -7,7 +7,7 @@ In this second part we are going to use HTML and CSS in orther to build a web st
 
 Below is a ``diagram showing the complete project``. In this instance we will cover the **HTML** and **CSS** of the front end (client side):
 
-<img src="/home/vagrant/holbertonschool-AirBnB_clone/hbnb_step1.png" />
+<img src="https://github.com/agusfl/holbertonschool-AirBnB_clone/blob/master/hbnb_step1.png" />
 
 ## Learning objectives:
 
