@@ -4,6 +4,7 @@
 
 This is the **second** of **seven** parts of the AirBnB clone project, which will result in a clone of the AirBnB website (front-end and back-end).
 In this second part we are going to use HTML and CSS in orther to build a web static. HTML is the structure of your page, CSS is the styling of your page, the design.
+
 The first step is to “design” / “sketch” / “prototype” each element:
 
 * Create simple HTML static pages
