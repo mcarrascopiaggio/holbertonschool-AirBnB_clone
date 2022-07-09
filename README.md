@@ -194,3 +194,4 @@ python3 -m unittest discover tests
 
 * [Agustin Flom](https://www.linkedin.com/in/agustin-f/)
 * [Marcela Carrasco](https://github.com/mcarrascopiaggio)
+* Webstatic folder: Marcela Carrasco
