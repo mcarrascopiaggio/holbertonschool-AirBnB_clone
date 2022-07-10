@@ -38,7 +38,3 @@ Below is a ``diagram showing the complete project``. In this instance we will co
 * Languages: **HTML** and **CSS**
 * Operating System: Ubuntu 20.04 LTS
 * Style guidelines: [W3C-Validator](https://validator.w3.org/docs/api.html)
-
-## Authors :pen:
-
-* [Agustin Flom](https://www.linkedin.com/in/agustin-f/)
