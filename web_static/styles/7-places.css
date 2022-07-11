@@ -1,0 +1,23 @@
+.places{
+vertical-align: bottom;
+left: 75px;
+margin-left: 8%;
+}
+
+.places h1{
+font-size: 30px;
+}
+
+.places ul li{
+width: 390px;
+padding: 20px;
+margin: 20px;
+border: 1px solid #FF5A5F;
+border-radius: 4px;
+font-size: 30px;
+align-items: center;
+display: inline-block;
+box-sizing: border-box;
+text-align: center;
+justify-content: center;
+}
