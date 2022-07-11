@@ -6,6 +6,7 @@ section.filters {
     border-radius: 4px;
     display: flex;
     margin-left: 75px;
+    vertical-align: top;
   }
 
 section.filters div.locations,
@@ -51,3 +52,37 @@ button:hover {
 section.filters div:first-child {
     border-right: 1px #DDDDDD solid;
   }
+
+div ul{
+    display: inline-block ;   
+    list-style: none;
+    line-height: 25px;
+    margin-left: 0%;
+}
+
+div ul h2 {
+    font-size: 16px;
+  }
+.popover{
+    border:1px solid #DDDDDD;
+    background-color: ghostwhite;
+    padding: 10px, 10px;
+    display: none;
+    top: 158px;
+    width: 22.8%;
+    justify-content: center;
+    margin-left: 0%;
+  }
+.locations:hover ul.popover {
+	display: block;
+    z-index: 100;
+    position: absolute;
+    left: 75px;
+}
+
+.amenities:hover ul.popover {
+	display: block;
+    z-index: 100;
+    position: absolute;
+	left: 426px;
+}
