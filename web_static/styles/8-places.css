@@ -50,6 +50,8 @@ section.places article div.title div.price_by_night {
     border: 4px #FF5A5F solid;
     border-radius: 50%;
     text-align: center;
+    box-sizing:content-box;
+    padding: 7px;
 }
   
 section.places article div.information {
