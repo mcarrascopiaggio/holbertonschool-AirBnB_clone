@@ -21,3 +21,8 @@ box-sizing: border-box;
 text-align: center;
 justify-content: center;
 }
+
+#special{
+    position: relative;
+    right: -200px;
+}
